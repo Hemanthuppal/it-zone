@@ -1,0 +1,208 @@
+.container {
+  width: 100%;
+  
+}
+
+.services-container {
+  /* padding: -40px; */
+  margin: auto;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  border-radius: 4px;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  scroll-margin-top: 100px;
+
+}
+p{
+  margin-left: 12px;
+  /* font-size: 35px; */
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.service-image img {
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  margin-left: 15px;
+}
+
+.service-content {
+  text-align: center;
+}
+
+.ipad-class {
+  display: none;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(0,0,0,0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typing-animation-container {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 3px;
+  animation: typing 3.5s steps(40, end), blinkCursor .75s step-end infinite;
+  border-right: 4px solid rgba(0,0,0,0.75);
+  box-sizing: border-box;
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .ipad-class {
+        display: block;
+    }
+}
+
+/* Alternatively, if you want to show the image on all tablet sizes, not just iPads */
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) {
+    .ipad-class {
+        display: block;
+    }
+}
+
+@media (min-width: 481px) {
+  .service-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .service-content, .service-image {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .service-content {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 16px;
+  }
+
+  .service-content {
+    text-align: left;
+  }
+}
+.my-Service{
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
+
+
+/* Initially hide elements and set them to move into view from the sides */
+.service-content-animate, .service-image-animate {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.service-content-animate {
+  transform: translateX(100%); /* Start content off to the right */
+}
+
+.service-image-animate {
+  transform: translateX(-100%); 
+ /* Start images off to the left */
+}
+
+.animate-on-scroll {
+  animation: slideIntoView 1s forwards;
+}
+
+@keyframes slideIntoView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+.animate-on-scroll {
+  animation: slideIntoView 1s forwards;
+}
+
+@keyframes slideIntoView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Fade in animation only for certain images */
+.image-fade-in {
+  opacity: 0; /* Start fully transparent */
+  animation: fadeIn 1s forwards; /* Animation to change opacity */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fully visible at the end */
+  }
+}
+
+@media (max-width: 767px) {
+  .service-image-animate, .service-content-animate {
+      opacity: 1; /* Ensure visibility */
+      transform: none; /* Reset transformations */
+  }
+}
